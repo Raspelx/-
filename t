@@ -1,5 +1,10 @@
-game.ReplicatedStorage.AntiCheatTrigger:Remove()
-game:GetService("ReplicatedStorage").VARDisplay:Remove()
+if game.PlaceId == 7288936208 then
+      game.ReplicatedStorage.AntiCheatTrigger:Remove()
+      game:GetService("ReplicatedStorage").VARDisplay:Remove()
+else
+      print("its practice or big pitch)
+end
+
 local DiscordLib = loadstring(game:HttpGet"https://raw.githubusercontent.com/dawid-scripts/UI-Libs/main/discord%20lib.txt")()
 
 local win = DiscordLib:Window("test gui")

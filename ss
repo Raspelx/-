@@ -113,6 +113,8 @@ btns:Button("Fake Left Leg", function()
         Lighting.TimeOfDay = "1:00:00"
     end)
 
+    local btns = serv:Channel("Misc")
+    
         btns:Button("İnfinite Stamina For pc Rn [Keybind = C]", function()
 local defaultSpeed = 16
 local speed = 20

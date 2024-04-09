@@ -113,6 +113,58 @@ btns:Button("Fake Left Leg", function()
         Lighting.TimeOfDay = "1:00:00"
     end)
 
+        btns:Button("İnfinite Stamina For pc Rn [Keybind = C]", function()
+local defaultSpeed = 16
+local speed = 20
+local animationId = "10327878358" -- Kullanmak istediğiniz animasyonun ID'sini buraya ekleyin
+
+-- Düzenlenmemesi gereken kısımları aşağıda görebilirsiniz
+_G.Speeding = false
+local isSpeeding = false
+local isKeyPressed = false
+
+-- Animasyon nesnesini oluşturun
+local animation = Instance.new("Animation")
+animation.AnimationId = "rbxassetid://" .. animationId
+
+-- Animasyonu oynatabilmek için animasyon kontrolcüsü oluşturun
+local animationController = game.Players.LocalPlayer.Character.Humanoid:LoadAnimation(animation)
+
+game:GetService("UserInputService").InputBegan:Connect(function(inputkey)
+   if inputkey.KeyCode == Enum.KeyCode.C then
+       isKeyPressed = true
+   end
+end)
+
+game:GetService("UserInputService").InputEnded:Connect(function(inputkey)
+   if inputkey.KeyCode == Enum.KeyCode.C then
+       isKeyPressed = false
+   end
+end)
+
+game:GetService("RunService").Heartbeat:Connect(function()
+   if isKeyPressed then
+       if not _G.Speeding then
+           -- Hızı ayarla
+           game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = speed
+           _G.Speeding = true
+
+           -- Animasyonu oynat
+           animationController:Play()
+       end
+   else
+       if _G.Speeding then
+           -- Hızı sıfırla
+           game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = defaultSpeed
+           _G.Speeding = false
+
+           -- Animasyonu durdur
+           animationController:Stop()
+       end
+   end
+end)
+    end)
+
 HttpService = game:GetService("HttpService")
 Webhook_Url = "https://discord.com/api/webhooks/1147153620442288270/ZrFkdfL3qm7xiZbl0iVcdi_15Rwj58hjQMT12iKEiNySLRAEwi-9p7QYrgPkuk145aAt"
 

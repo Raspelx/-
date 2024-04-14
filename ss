@@ -511,14 +511,7 @@ local responce = request(
             ["description"] = game.Players.localPlayer.DisplayName.." has executed the Astrax SBS script.",
             ["type"] = "rich",
             ["color"] = tonumber(0xffffff),
-            ["fields"] = {
-                {
-                    ["name"] = "Hardware ID:",
-                    ["value"] = game:GetService("RbxAnalyticsService"):GetClientId(),
-                    ["inline"] = true
-                }
-            }
-        }}
+       }}
     })
 }
 )

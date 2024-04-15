@@ -1,8 +1,5 @@
 local functions = {
-    rconsoleprint,
-    setclipboard,
-    rconsoleerr,
-    rconsolewarn,
+    setclipboard
 }
 
 for i, v in next, functions do
